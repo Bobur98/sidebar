@@ -30,7 +30,6 @@ export const Sidebar = () => {
       }
     >
       <span className={styles.logo}>Logo</span>
-
       {data.map((value, _) => {
         const { Icon, ArrowDown, ArrowUp } = value;
         return value?.child?.length || value?.child?.child?.length ? (
