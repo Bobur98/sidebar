@@ -1,0 +1,31 @@
+@import '../../styles/mixin';
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  width: calc(100vw - $sidebar_width_open);
+  height: 60px;
+  background: $gray_light;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+}
+.content.true {
+  width: calc(100vw - $sidebar_width_onClose);
+}
+.body {
+  border-left: 18px solid $gray_light;
+  border-right: 18px solid $gray_light;
+  height: calc(100vh - 140px);
+  padding: 25px 25px 0 25px;
+}
+.footer {
+  background: $gray_light;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

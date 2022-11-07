@@ -1,0 +1,161 @@
+@import '../../styles/mixin';
+.container {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar_width_open;
+  height: 100vh;
+  padding: 30px 0;
+  background-color: $sidebar_bg_color;
+  overflow: auto;
+  // .active {
+  //   background-color: $on_hover;
+  //   color: $white;
+  //   text-decoration: none;
+  // }
+}
+.container.close {
+  width: $sidebar_width_onClose;
+  .pageIcon {
+    margin-right: 0;
+  }
+}
+.logo {
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: $white;
+  padding: 0 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  min-height: 55px;
+  max-height: 55px;
+  padding: 0 25px;
+  width: 100%;
+  cursor: pointer;
+  color: $gray_dark;
+  text-decoration: none;
+  &:hover {
+    color: $white;
+    background-color: $on_hover;
+    .pageIcon {
+      stroke: $white;
+      fill: $white;
+    }
+    .arrowIcon {
+      stroke: $white;
+    }
+  }
+}
+
+.link.sidebar_on_close {
+  &:hover {
+    .childContainer {
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
+      height: max-content;
+      margin-left: 55.5px;
+      margin-top: 72px;
+      position: absolute;
+      z-index: 999;
+      transition: all 0.1s;
+      .childLink {
+        // margin: 0 auto;
+        padding: 10px 80px 10px 20px;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.iconContainer {
+  position: absolute;
+  margin-left: 185px;
+  // grid-area: 1 / 3 / 2 / 2;
+  .arrowIcon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.childContainer {
+  display: flex;
+  flex-direction: column;
+  background: $blue_light;
+  color: $gray_dark;
+  .childLink {
+    // padding-left: 57px;
+    padding: 10px 0 10px 57px;
+    &:hover {
+      color: $white;
+      background-color: $on_hover;
+    }
+  }
+}
+.childContainer.onOpen {
+  height: 0px;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+.title {
+  // grid-area: 1 / 1 / 2 / 2;
+  text-decoration: none;
+  color: $gray_dark;
+}
+
+.childLink {
+  // grid-area: 2 / 1 / 3 / 2;
+  text-decoration: none;
+  color: $gray_dark;
+}
+
+.onClose {
+  overflow: hidden;
+  display: none;
+}
+
+.pageIcon {
+  width: 20px;
+  height: 20px;
+  stroke: grey;
+  fill: grey;
+  margin-right: 13px;
+}
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  stroke: $white;
+  fill: $white;
+}
+.btn {
+  cursor: pointer;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  color: $white;
+  background-color: $blue_light;
+  border: none;
+  border-radius: 0;
+}
+.outlet {
+  display: flex;
+  flex: 1;
+  // padding: 2rem 4rem;
+  // width: 100%;
+}
+.active {
+  background-color: $on_hover;
+  color: $white;
+  .pageIcon {
+    stroke: $white;
+    fill: $white;
+  }
+}
